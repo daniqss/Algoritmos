@@ -1,0 +1,8 @@
+{
+    "files.associations": {
+        "leertiempo.h": "c",
+        "prepararvector.h": "c"
+    },
+    "editor.rulers": [80],
+    "workbench.colorCustomizations": {"editorRuler.foreground": "#d550a7"},
+}
