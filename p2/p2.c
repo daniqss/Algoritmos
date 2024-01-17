@@ -17,13 +17,13 @@ int main(){
 
     inicializar_semilla();
     test();
-    for(; j <= 5; j++){
-        do{
-            selectorCombinacionesLeerTiempo(j);
-            i++;
-        }while(i != 3);
-        i = 0;;
-    }
+    // for(; j <= 5; j++){
+    //     do{
+    //         selectorCombinacionesLeerTiempo(j);
+    //         i++;
+    //     }while(i != 3);
+    //     i = 0;;
+    // }
 
     return 0;
 }
@@ -49,7 +49,7 @@ void ordShell(int v[], int n) {
     bool seguir;
     
     do {
-        incremento = incremento / 2;
+        incremento /= 2;
         
         for (i = incremento; i < n; i++) {
             tmp = v[i];
@@ -59,7 +59,7 @@ void ordShell(int v[], int n) {
             while (j - incremento >= 0 && seguir) {
                 if (tmp < v[j - incremento]) {
                     v[j] = v[j - incremento];
-                    j = j - incremento;
+                    j -= incremento;
                 } else {
                     seguir = false;
                 }
@@ -70,16 +70,16 @@ void ordShell(int v[], int n) {
 }
 
 void test(){
-    int size = 21, i = 0, j = 0;
+    int size = 21, i, j;
     int v[size];
  
-    for(; j <= 1; j++){
+    for(j = 0; j <= 1; j++){
         if(j == 0){
             puts("\033[1;35m""\t\t\t\tOrdenacionInsercion""\033[0m");
         } else {
             puts("\033[1;35m""\t\t\t\tOrdenacionShell""\033[0m");   
         }
-        for (;i <= 2; i++){
+        for (i = 0; i <= 2; i++){
             prepararVector(v, size, i);
             printf("\033[1;31m");
             printVector(v, size);
