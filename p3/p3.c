@@ -28,7 +28,8 @@ int main() {
 }
 
 void copiarVector(const int v1[], int v2[], int size) {
-    int i = 0;
+    int i;
+    
     for(i = 0; i < size; i++){
         v2[i] = v1[i];
     }
