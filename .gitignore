@@ -1,10 +1,1 @@
-*
-
-!monticulo-maximos
-!*.c
-!*.h
-!*.txt
-!*.md
-!.gitignore
-!.vscode
-!settings.json
+*.o

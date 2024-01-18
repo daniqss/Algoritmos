@@ -1,0 +1,158 @@
+﻿//ASIGNATURA: ALGORITMOS
+//PRÁCTICA: Ordenación por insercion y ordenación shell
+//FECHA DE ENTREGA: 21/10/23
+//INTEGRANTES: ALEJANDRO COUTO NICOLAU (alejandro.couto.nicolau@udc.es)
+//             DANIEL QUEIJO SEOANE (daniel.queijo.seoane@udc.es)
+               MIGUEL CANO MENÉNDEZ (miguel.cano@udc.es)
+
+
+1. Introducción: explicación y características de la máquina: 
+
+
+En este informe se indica el estudio de varias mediciones de tiempo y se calcula empíricamente la complejidad de un algoritmo
+de ordenación. Se han tomado tres tipos de vectores para el estudio, uno inicializado aleatoriamente, otro de forma descendente
+y el último de forma ascendente. Los tamaños usados, n igual a 500, 1000, 2000, 4000, 8000, 16000 y 32000 para ambos
+algoritmos en los casos aleatorios y descendente, más, 64000, 128000 y 256000 para ambos algoritmos solo en los casos ascendentes. 
+ 
+Para la medición de los tiempos se usarán como unidades los microsegundos y se denotará en las tablas como t(n).
+Los tiempos inferiores a 500 microsegundos serán un promedio de un determinado número de repeticiones “K” realizadas sobre
+dicho algoritmo para reducir el error de medición, K se indicará en las tablas. 
+
+
+La máquina en la que se ejecutó el programa y se tomaron los tiempos es la siguiente: 
+           -Tipo de máquina 
+                         Portátil
+                -Modelo 
+                         HP Laptop 15s-eq2xxx
+ 
+                -Nombre del SO
+                        EndeavourOS Linux x86_64
+
+
+                -Tipo SO
+                        64 bits
+
+
+                -Memoria RAM 
+                        16,00 GB 3200Mhz
+                 
+                -Procesador 
+                        AMD Ryzen 7 5700U 
+
+
+                -Frecuencia del procesador 
+                        4.00GHz 
+
+
+                -Placa base 
+                        MS-16JF 
+
+
+                -Tarjetas gráficas
+                        Radeon Graphics
+
+
+======================================================================
+
+
+2. Tiempos y complejidad
+
+Tabla tiempos ordenar Aleatorio
+
+Tabla tiempos ordenar Aleatorio
+
+           n           t(n)       t(n)/n^0.9log(n^0.9)      t(n)/n^1.15log(n^1.15)      t(n)/n^0.9log(n^0.9)
+*        500          43.5107          0.906107                     0.244846          0.187252
+*       1000          94.9377          1.177655                     0.267592          0.197677
+*       2000         206.1859          1.508133                     0.278163          0.205622
+*       4000         369.5685          1.580702                     0.253975          0.175054
+        8000         574.0000          1.425600                     0.192611          0.128236
+       16000        1205.0000          1.727477                     0.196263          0.126216
+       32000        2596.0000          2.137161                     0.204176          0.126833
+
+
+
+t(n) = tf - ti; 
+t(n) = ((tf - ti)/rep) - (tfr - tir)/rep;; Para repeticiones
+n^0.9log(n^0.9) es una cota ajustada
+n^1.0log(n^1.0) es una cota subestimada
+n^1.1log(n^1.1)es una cota sobrestimada
+
+
+La constante que presenta esta tabla para la cota ajustada es aproximadamente 0.24
+Es importante destacar que se descarta el valor de 500 y 8000 ya que se desvía ligeramente de las constantes indicadas.
+
+
+
+
+
+Tabla tiempos ordenar Descendente
+
+           n           t(n)       t(n)/n^0.9log(n^0.9)      t(n)/n^0.9log(n^0.9)      t(n)/n^0.9log(n^0.9)
+*        500         115.6829          2.409087          1.437848          0.849588
+*       1000         448.1268          5.558791          3.095550          1.706595
+        2000        1830.0000         13.385413          6.954826          3.577469
+        4000        7085.0000         30.303654         14.690835          7.050715
+        8000       27990.0000         69.516624         31.443955         14.080590
+       16000      110864.0000        158.933651         67.075104         28.024769
+       32000      442515.0000        364.301087        143.450795         55.921736
+
+
+t(n) = tf - ti; 
+t(n) = ((tf - ti)/rep) - (tfr - tir)/rep;; Para repeticiones
+n^0.9log(n^0.9) es una cota ajustada
+n^1.0log(n^1.0) es una cota subestimada
+n^1.1log(n^1.1)es una cota sobrestimada
+
+
+La constante que presenta esta tabla para la cota ajustada es aproximadamente 0.00095
+Es importante destacar que se descarta el valor de 500 ya que se desvía ligeramente de las constantes indicadas.
+
+
+
+
+
+Tabla tiempos ordenar Ascendente
+
+           n           t(n)       t(n)/n^0.9log(n^0.9)      t(n)/n^0.9log(n^0.9)      t(n)/n^0.9log(n^0.9)
+         500          39.8695          0.830279                0.495547                0.292806
+        1000         141.3266          1.753087                0.976250                0.538212
+        2000         543.0000          3.971737                2.063645                1.061511
+        4000        2212.0000          9.461070                4.586609                2.201296
+        8000        8276.0000         20.554469                9.297255                4.163307
+       16000       33802.0000         48.458249               20.450937                8.544642
+       32000      137984.0000        113.595519               44.730494               17.437386
+       64000      535137.0000        251.861178               92.533870               33.657001
+      128000     3488024.0000        934.829488              320.456361              108.752834
+      256000    18743187.0000       2850.635050              911.748620              288.698019
+
+¡AVISO!: Las filas en rojo indican que se han realizado 10000 repeticiones
+(NOTA: En este informe las filas en rojo se indican con un asterisco)
+
+
+t(n) = tf - ti; 
+t(n) = ((tf - ti)/rep) - (tfr - tir)/rep;; Para repeticiones
+n^0.9log(n^0.9) es una cota ajustada
+n^1.0log(n^1.0) es una cota subestimada
+n^1.1log(n^1.1)es una cota sobrestimada
+
+
+La constante que presenta esta tabla para la cota ajustada es aproximadamente 0.0026
+Es importante destacar que se descarta el valor de 64000 y 128000 ya que se desvía ligeramente de las constantes indicadas.
+
+
+======================================================================
+
+
+3. Conclusión
+
+
+Tras el estudio realizado sobre los tiempos del algoritmo podemos observar que ordenar es 
+más eficiente en los casos de vectores aleatorios. Esto se debe a que ordenar es una implementación
+del algoritmo de Quicksort que es mucho más eficiente con vectores muy ordenados
+
+Las cotas ajustadas para vectores aleatorios O(n^1.15log(n^1.15) ). Esta se acerca a la O() teórica
+de n*log(n). Para los casos de vectores ordenados ascendente o descendentemente la complejidad se dispara
+
+Con todo esto llegamos a la conclusión de este algoritmo de ordenación para vectores desordenados es muy bueno 
+pero no para vectores ordenados. Para este caso sería mejor mergesort

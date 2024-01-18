@@ -1,0 +1,35 @@
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------
+[Informe Práctica 4] - Algoritmos 23/24. Cálculo camiño mínimo: Dijkstra.
+Autores: Viqueira Castiñeiras, Pablo e Conde Carrera, Manuel.
+Grupo: 2.3
+Especificacións máquina empregada:
+ 	- Modelo: Microsoft Corporation Surface Laptop Go 2
+ 	- Procesador: 11th Gen Intel® Core™ i5-1135G7 @ 2.40GHz × 8
+ 	- Memoria RAM: 8,0 GiB
+ 	- SO: Ubuntu 22.04.3 LTS (64 Bits)
+ ----------------------------------------------------------------------------------------------------------------------------------------------------------------------
+ 
+Nesta práctica faremos uso dos grafos e implementaremos o pseudocódigo do algoritmo Dijkstra para calcular o camiño mínimo entre os nodos dada a súa matriz de adyacencia. A unidade de tempo "t" empregada é o microsegundo. A matriz de adyancencia "m" contén o peso dos vértices do grafo e a matriz "d" contén o camiño mínimo entre os nodos. En "n" indicamos a cantidade de nodos que contén o grafo. En canto o tamaño das entradas seguimos unha distribución xeométrica de 2.
+ 
+Os propósitos desta práctica son comprobar o correcto funcionamento da implementación e obter a complexidade empírica do algoritmo analizando os tempos para comparala coa complexidade teórica.
+Cando o tempo é inferior ao umbral de confianza (500 microsegundos), repetimos ese caso 1000 veces (K) e mostramos o promedio de tempo.
+ 
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+[Algoritmo Dijkstra]: n empeza con 15 e acaba con 960.
+
+	     n		       t(n)			t(n)/n^2.65		t(n)/n^2.755		t(n)/n^2.95		t(n)/n^3
+(*)	    15		     36.097			0.027595		0.020765		0.012246		0.010695
+(*)	    30		    267.758			0.032612		0.022818		0.011755		0.009917
+	    60		   1810.000			0.035122		0.022849		0.010283		0.008380
+	   120		  11123.000			0.034387		0.020801		0.008178		0.006437
+	   240		  74031.000			0.036463		0.020508		0.007044		0.005355
+	   480		 517256.000			0.040590		0.021227		0.006369		0.004677
+	   960		3774604.000			0.047190		0.022946		0.006014		0.004266
+	   
+(*) No algoritmo de repetición empregamos unha constante K de 1000 por non superar o umbral de confianza, por tanto mostramos o promedio de tempo.
+A constante de cota axustada é de 0.0215 . A cota teórica é n^3 pero ao levalo á práctica obtemos unha cota de n^2.755. A cota subestimada é de n^2.65 e a sobrestimada é de n^2.95 .
+
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+En conclusión, para grafos non dirixidos a implementación por matrices de adyacencia do algoritmo é boa. Realizando o análise de tempos obtivemos unha complexidade empírica, n^2.755, mellor que a complexidade teórica , n^3.

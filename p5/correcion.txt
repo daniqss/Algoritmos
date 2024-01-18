@@ -1,0 +1,56 @@
+Correctores: ALEJANDRO COUTO NICOLAU (alejandro.couto.nicolau@udc.es)
+             DANIEL QUEIJO SEOANE (daniel.queijo.seoane@udc.es)
+		     MIGUEL CANO MENÉNDEZ (miguel.cano@udc.es)
+
+Evaluados : Manuel, Pablo.
+
+a Implementacion correcta: es el algoritmo pedido y funciona bien. -> 1
+
+b1 Se respetan las declaraciones del enunciado. -> 1
+
+b2 Al compilar con la opcion -Wall no hay warnings. -> 1
+
+b3 El sangrado (o indentacion) del codigo es correcta -> 1
+
+b4 El codigo esta estructurado y toda funcion tiene menos de 40 filas y 80 columnas. -> 0,5
+    -> Lineas 249, 70 mas de 80.  test2 mas de 40.
+
+b5 Todas las variables se declaran al principio de cada funcion antes
+de cualquier proposicion ejecutable y no hay variables globales. -> 1
+
+b6 Buena gestion de memoria: un free por cada malloc, sin vector innecesarios, etc -> 1
+
+b7 El caso de tiempos menores que 500 micros. esta automatizado en el coodigo; y
+los numeros pseudoaleatorios se generan bien. -> 1
+
+b8 Hay alguna funcioon test para validar el algoritmo. -> 1
+
+c La medicion de tiempos es correcta. -> 1
+
+d Las cotas ajustadas estan indicadas y son correctas. -> 1
+
+e1 El informe tiene una introduccion.-> 1
+
+e2 El informe tiene conclusiones.-> 1
+
+e3 Se indica la maquina. -> 1
+
+e4 Se indican las unidades de tiempo. -> 1
+
+e5 El tamano de las entradas sigue una progresion geometrica de razon dos o diez. -> 1
+
+e6 Las tablas presentan al menos cinco filas de datos de la progresion geometrica. -> 1
+
+e7 Todos los nuumeros de las tablas tienen al menos tres cifras significativas. -> 1
+
+e8 Se estudia una cota (ligeramente) subestimada que se indica. -> 1
+
+e9 Se estudia una cota (ligeramente) sobrestimada que se indica. -> 1
+
+e10 Se resaltan los tiempos medidos en bucles indicando las iteraciones empleadas. -> 1
+
+e11 Se indica la constante a la que tiene la sucesion de la cota ajustada. -> 1
+
+e12 Las mediciones anomalas, se han tratado de impedir y estan documentados. -> 1
+
+f Existe algun otro error. -> 0 (Sin errores)
